@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C111CFE-BE1E-468D-ABA9-22FDF8032180}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HM_WAP_JEIL_DOSING</RootNamespace>
+    <AssemblyName>HM_WAP_JEIL_DOSING</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://175.207.29.204:2121/cs/wapclient/harim/dosing/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://wapclient.koreafirst.kr/harim/dosing/</InstallUrl>
+    <ProductName>HarimFA</ProductName>
+    <PublisherName>KFIRST</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.htm</WebPage>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\dlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0B7510FCD7908043C9C71897B6B90F0686D34DFB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HM_WAP_JEIL_DOSING_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 22.2\Components\Bin\Framework\DevExpress.Data.v22.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2.UI, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v22.2.Core.Desktop, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\clsPrintExcel.cs" />
+    <Compile Include="Class\clsPrintReport.cs" />
+    <Compile Include="Class\clsProcessDosing.cs" />
+    <Compile Include="Class\clsSql.cs" />
+    <Compile Include="Form\1.기준정보관리\frm_Bin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Bin.Designer.cs">
+      <DependentUpon>frm_Bin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_FileMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_FileMaster.Designer.cs">
+      <DependentUpon>frm_FileMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Plant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Plant.Designer.cs">
+      <DependentUpon>frm_Plant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Location.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Location.Designer.cs">
+      <DependentUpon>frm_Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Process.Designer.cs">
+      <DependentUpon>frm_Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_SCR_MG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_SCR_MG.Designer.cs">
+      <DependentUpon>frm_SCR_MG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Menu_MG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Menu_MG.Designer.cs">
+      <DependentUpon>frm_Menu_MG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Car.Designer.cs">
+      <DependentUpon>frm_Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Code.Designer.cs">
+      <DependentUpon>frm_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Customer.Designer.cs">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Input_PSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Input_PSB.Designer.cs">
+      <DependentUpon>frm_Input_PSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Employee.Designer.cs">
+      <DependentUpon>frm_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Scale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_Scale.Designer.cs">
+      <DependentUpon>frm_Scale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_ScreenAttr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_ScreenAttr.Designer.cs">
+      <DependentUpon>frm_ScreenAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_WorkGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\frm_WorkGroup.Designer.cs">
+      <DependentUpon>frm_WorkGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_BinSeqDupChack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_BinSeqDupChack.Designer.cs">
+      <DependentUpon>m_BinSeqDupChack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_PasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_PasswordChange.Designer.cs">
+      <DependentUpon>m_PasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_WorkGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1.기준정보관리\m_WorkGroup.Designer.cs">
+      <DependentUpon>m_WorkGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Ingred.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Ingred.Designer.cs">
+      <DependentUpon>frm_Ingred.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Product.Designer.cs">
+      <DependentUpon>frm_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Pdetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\frm_Pdetail.Designer.cs">
+      <DependentUpon>frm_Pdetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\m_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2.제품기준정보\m_Product.Designer.cs">
+      <DependentUpon>m_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Bag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Bag.Designer.cs">
+      <DependentUpon>frm_Bag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Ingred_Input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Ingred_Input.Designer.cs">
+      <DependentUpon>frm_Ingred_Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Orders.Designer.cs">
+      <DependentUpon>frm_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_DosingERP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_DosingERP.Designer.cs">
+      <DependentUpon>frm_DosingERP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_BinInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_BinInput.Designer.cs">
+      <DependentUpon>frm_BinInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Dosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Dosing.Designer.cs">
+      <DependentUpon>frm_Dosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_EqTrouble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_EqTrouble.Designer.cs">
+      <DependentUpon>frm_EqTrouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_ErpStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_ErpStock.Designer.cs">
+      <DependentUpon>frm_ErpStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Pack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Pack.Designer.cs">
+      <DependentUpon>frm_Pack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Pellet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Pellet.Designer.cs">
+      <DependentUpon>frm_Pellet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_RestTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_RestTime.Designer.cs">
+      <DependentUpon>frm_RestTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Smash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_Smash.Designer.cs">
+      <DependentUpon>frm_Smash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_StockChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_StockChange.Designer.cs">
+      <DependentUpon>frm_StockChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_StockMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\frm_StockMove.Designer.cs">
+      <DependentUpon>frm_StockMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_bagEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_bagEnd.Designer.cs">
+      <DependentUpon>m_bagEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_binChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_binChange.Designer.cs">
+      <DependentUpon>m_binChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_packEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3.생산계획관리\m_packEnd.Designer.cs">
+      <DependentUpon>m_packEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BagUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BagUseResult.Designer.cs">
+      <DependentUpon>frm_BagUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BatchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BatchList.Designer.cs">
+      <DependentUpon>frm_BatchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_DosingResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_DosingResult.Designer.cs">
+      <DependentUpon>frm_DosingResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_EqTroubleResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_EqTroubleResult.Designer.cs">
+      <DependentUpon>frm_EqTroubleResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_IngredDayUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_IngredDayUseResult.Designer.cs">
+      <DependentUpon>frm_IngredDayUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_IngredUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_IngredUseResult.Designer.cs">
+      <DependentUpon>frm_IngredUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_PackUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_PackUseResult.Designer.cs">
+      <DependentUpon>frm_PackUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_ProductDayUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_ProductDayUseResult.Designer.cs">
+      <DependentUpon>frm_ProductDayUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_Productivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_Productivity.Designer.cs">
+      <DependentUpon>frm_Productivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_ProductUseResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_ProductUseResult.Designer.cs">
+      <DependentUpon>frm_ProductUseResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_BagOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_BagOrder.Designer.cs">
+      <DependentUpon>frm_BagOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_BulkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_BulkOrder.Designer.cs">
+      <DependentUpon>frm_BulkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_ExpCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_ExpCar.Designer.cs">
+      <DependentUpon>frm_ExpCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Protrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Protrans.Designer.cs">
+      <DependentUpon>frm_Input_Protrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_OUTPUT_SMORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_OUTPUT_SMORDER.Designer.cs">
+      <DependentUpon>frm_OUTPUT_SMORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Wap_Decar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Wap_Decar.Designer.cs">
+      <DependentUpon>frm_Wap_Decar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Pallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Pallet.Designer.cs">
+      <DependentUpon>frm_Pallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_SiloIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_SiloIn.Designer.cs">
+      <DependentUpon>frm_SiloIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WapCustMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WapCustMapping.Designer.cs">
+      <DependentUpon>frm_WapCustMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Poorderm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Poorderm.Designer.cs">
+      <DependentUpon>frm_Input_Poorderm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightEtc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightEtc.Designer.cs">
+      <DependentUpon>frm_WeightEtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightIn.Designer.cs">
+      <DependentUpon>frm_WeightIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_WeightOut.Designer.cs">
+      <DependentUpon>frm_WeightOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\mInOutPrintSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\mInOutPrintSel.Designer.cs">
+      <DependentUpon>mInOutPrintSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\mInoutSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\mInoutSelect.Designer.cs">
+      <DependentUpon>mInoutSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSD.Designer.cs">
+      <DependentUpon>m_SAP_INPUT_PROTRANSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_TMS_INPUT_PLOADD_CON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_TMS_INPUT_PLOADD_CON.Designer.cs">
+      <DependentUpon>m_TMS_INPUT_PLOADD_CON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSM.Designer.cs">
+      <DependentUpon>m_SAP_INPUT_PROTRANSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_TMS_INPUT_PLOADM_CON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_TMS_INPUT_PLOADM_CON.Designer.cs">
+      <DependentUpon>m_TMS_INPUT_PLOADM_CON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_POORDERD_CON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_POORDERD_CON.Designer.cs">
+      <DependentUpon>m_SAP_INPUT_POORDERD_CON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_POORDERM_CON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_SAP_INPUT_POORDERM_CON.Designer.cs">
+      <DependentUpon>m_SAP_INPUT_POORDERM_CON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_Wap_Decar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_Wap_Decar.Designer.cs">
+      <DependentUpon>m_Wap_Decar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_Input_Ploadm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_Input_Ploadm.Designer.cs">
+      <DependentUpon>m_Input_Ploadm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_selOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_selOrder.Designer.cs">
+      <DependentUpon>m_selOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_BagReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_BagReport.Designer.cs">
+      <DependentUpon>frm_BagReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_BulkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_BulkReport.Designer.cs">
+      <DependentUpon>frm_BulkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_DosingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_DosingReport.Designer.cs">
+      <DependentUpon>frm_DosingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_GrindingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_GrindingReport.Designer.cs">
+      <DependentUpon>frm_GrindingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_MainIngredReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_MainIngredReport.Designer.cs">
+      <DependentUpon>frm_MainIngredReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_MicroIngredReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_MicroIngredReport.Designer.cs">
+      <DependentUpon>frm_MicroIngredReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_PelletReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_PelletReport.Designer.cs">
+      <DependentUpon>frm_PelletReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_SubIngredReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6.보고서실적관리\frm_SubIngredReport.Designer.cs">
+      <DependentUpon>frm_SubIngredReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Order_Mon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Order_Mon.Designer.cs">
+      <DependentUpon>frm_Input_Order_Mon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Ploadm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Ploadm.Designer.cs">
+      <DependentUpon>frm_Input_Ploadm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Ship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\frm_Input_Ship.Designer.cs">
+      <DependentUpon>frm_Input_Ship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_WapInAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\7.입출고관리\m_WapInAdd.Designer.cs">
+      <DependentUpon>m_WapInAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN_PASS_CHANGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN_PASS_CHANGE.Designer.cs">
+      <DependentUpon>LOGIN_PASS_CHANGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.Designer.cs">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mWorkTimeInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mWorkTimeInput.Designer.cs">
+      <DependentUpon>mWorkTimeInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Bin.resx">
+      <DependentUpon>frm_Bin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_FileMaster.resx">
+      <DependentUpon>frm_FileMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Plant.resx">
+      <DependentUpon>frm_Plant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Location.resx">
+      <DependentUpon>frm_Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Process.resx">
+      <DependentUpon>frm_Process.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_SCR_MG.resx">
+      <DependentUpon>frm_SCR_MG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Menu_MG.resx">
+      <DependentUpon>frm_Menu_MG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Car.resx">
+      <DependentUpon>frm_Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Code.resx">
+      <DependentUpon>frm_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Customer.resx">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Input_PSB.resx">
+      <DependentUpon>frm_Input_PSB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Employee.resx">
+      <DependentUpon>frm_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_Scale.resx">
+      <DependentUpon>frm_Scale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_ScreenAttr.resx">
+      <DependentUpon>frm_ScreenAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\frm_WorkGroup.resx">
+      <DependentUpon>frm_WorkGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\m_BinSeqDupChack.resx">
+      <DependentUpon>m_BinSeqDupChack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\m_PasswordChange.resx">
+      <DependentUpon>m_PasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1.기준정보관리\m_WorkGroup.resx">
+      <DependentUpon>m_WorkGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2.제품기준정보\frm_Ingred.resx">
+      <DependentUpon>frm_Ingred.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2.제품기준정보\frm_Product.resx">
+      <DependentUpon>frm_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2.제품기준정보\frm_Pdetail.resx">
+      <DependentUpon>frm_Pdetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2.제품기준정보\m_Product.resx">
+      <DependentUpon>m_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Bag.resx">
+      <DependentUpon>frm_Bag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Ingred_Input.resx">
+      <DependentUpon>frm_Ingred_Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Orders.resx">
+      <DependentUpon>frm_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_DosingERP.resx">
+      <DependentUpon>frm_DosingERP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_BinInput.resx">
+      <DependentUpon>frm_BinInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Dosing.resx">
+      <DependentUpon>frm_Dosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_EqTrouble.resx">
+      <DependentUpon>frm_EqTrouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_ErpStock.resx">
+      <DependentUpon>frm_ErpStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Pack.resx">
+      <DependentUpon>frm_Pack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Pellet.resx">
+      <DependentUpon>frm_Pellet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_RestTime.resx">
+      <DependentUpon>frm_RestTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_Smash.resx">
+      <DependentUpon>frm_Smash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_StockChange.resx">
+      <DependentUpon>frm_StockChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\frm_StockMove.resx">
+      <DependentUpon>frm_StockMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\m_bagEnd.resx">
+      <DependentUpon>m_bagEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\m_binChange.resx">
+      <DependentUpon>m_binChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3.생산계획관리\m_packEnd.resx">
+      <DependentUpon>m_packEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_BagUseResult.resx">
+      <DependentUpon>frm_BagUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_BatchList.resx">
+      <DependentUpon>frm_BatchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_DosingResult.resx">
+      <DependentUpon>frm_DosingResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_EqTroubleResult.resx">
+      <DependentUpon>frm_EqTroubleResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_IngredDayUseResult.resx">
+      <DependentUpon>frm_IngredDayUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_IngredUseResult.resx">
+      <DependentUpon>frm_IngredUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_PackUseResult.resx">
+      <DependentUpon>frm_PackUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_ProductDayUseResult.resx">
+      <DependentUpon>frm_ProductDayUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_Productivity.resx">
+      <DependentUpon>frm_Productivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_ProductUseResult.resx">
+      <DependentUpon>frm_ProductUseResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_BagOrder.resx">
+      <DependentUpon>frm_BagOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_BulkOrder.resx">
+      <DependentUpon>frm_BulkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_ExpCar.resx">
+      <DependentUpon>frm_ExpCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Input_Protrans.resx">
+      <DependentUpon>frm_Input_Protrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_OUTPUT_SMORDER.resx">
+      <DependentUpon>frm_OUTPUT_SMORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Wap_Decar.resx">
+      <DependentUpon>frm_Wap_Decar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Pallet.resx">
+      <DependentUpon>frm_Pallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_SiloIn.resx">
+      <DependentUpon>frm_SiloIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_WapCustMapping.resx">
+      <DependentUpon>frm_WapCustMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Input_Poorderm.resx">
+      <DependentUpon>frm_Input_Poorderm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_WeightEtc.resx">
+      <DependentUpon>frm_WeightEtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_WeightIn.resx">
+      <DependentUpon>frm_WeightIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_WeightOut.resx">
+      <DependentUpon>frm_WeightOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\mInOutPrintSel.resx">
+      <DependentUpon>mInOutPrintSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\mInoutSelect.resx">
+      <DependentUpon>mInoutSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSD.resx">
+      <DependentUpon>m_SAP_INPUT_PROTRANSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_TMS_INPUT_PLOADD_CON.resx">
+      <DependentUpon>m_TMS_INPUT_PLOADD_CON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_SAP_INPUT_PROTRANSM.resx">
+      <DependentUpon>m_SAP_INPUT_PROTRANSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_TMS_INPUT_PLOADM_CON.resx">
+      <DependentUpon>m_TMS_INPUT_PLOADM_CON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_SAP_INPUT_POORDERD_CON.resx">
+      <DependentUpon>m_SAP_INPUT_POORDERD_CON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_SAP_INPUT_POORDERM_CON.resx">
+      <DependentUpon>m_SAP_INPUT_POORDERM_CON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_Wap_Decar.resx">
+      <DependentUpon>m_Wap_Decar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_Input_Ploadm.resx">
+      <DependentUpon>m_Input_Ploadm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_selOrder.resx">
+      <DependentUpon>m_selOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_BagReport.resx">
+      <DependentUpon>frm_BagReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_BulkReport.resx">
+      <DependentUpon>frm_BulkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_DosingReport.resx">
+      <DependentUpon>frm_DosingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_GrindingReport.resx">
+      <DependentUpon>frm_GrindingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_MainIngredReport.resx">
+      <DependentUpon>frm_MainIngredReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_MicroIngredReport.resx">
+      <DependentUpon>frm_MicroIngredReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_PelletReport.resx">
+      <DependentUpon>frm_PelletReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6.보고서실적관리\frm_SubIngredReport.resx">
+      <DependentUpon>frm_SubIngredReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Input_Order_Mon.resx">
+      <DependentUpon>frm_Input_Order_Mon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Input_Ploadm.resx">
+      <DependentUpon>frm_Input_Ploadm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\frm_Input_Ship.resx">
+      <DependentUpon>frm_Input_Ship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\7.입출고관리\m_WapInAdd.resx">
+      <DependentUpon>m_WapInAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN_PASS_CHANGE.resx">
+      <DependentUpon>LOGIN_PASS_CHANGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN.resx">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mWorkTimeInput.resx">
+      <DependentUpon>mWorkTimeInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="HM_WAP_JEIL_DOSING_2_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addnewdatasource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at_dosing_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at_dosing_top_log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bodepartment_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bopermission_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bouser_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultprinter_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletedatasource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentmap_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentmap_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editdatasource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editdatasource_16x165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employees_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttodoc_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttohtml_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttopdf_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttotxt_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttoxls_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fixedwidth_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i2 Solution 01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsetsymbols3_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lan_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managerules_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mes_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moveup_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moveup_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagenext_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\program.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recurrence_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveall_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveandclose_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System-Maintenance-Image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textbox_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weightedpies_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_16x1619.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{80d01b4b-e6c9-4fdc-85b6-6d86b75f600c}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\5.주문지시관리\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DevExpress.Data.v22.2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevExpress.Data.v22.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
