@@ -2282,10 +2282,9 @@ namespace HARIM_FA_DOSING
                     AND BF_WORKDATE = '{vWorkDate}' AND BF_NUM = '{vWorkNum}'
             ";
 
-            if (Dbconn.conn.SQLrun(SQL) < 1)
-            {
-                clsLog.logSave(SQL, 0);
-            }
+            Dbconn.conn.SQLrun(SQL);
+
+            Dbconn.conn.Commit();
 
             // 비율 완료
             Array.Clear(rData, 0, rData.Length);

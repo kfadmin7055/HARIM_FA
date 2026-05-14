@@ -16,6 +16,7 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraSplashScreen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -176,7 +177,7 @@ namespace HARIM_FA_DOSING
                     { "TYPE", "운송사" }
                 };
 
-            clsDevexpressGrid.ItemSearchLookUpEditSetup(gridDecarscboINCAR_NO, clsCommon.GetCarMaster(), "", true, parameterDict);
+            clsDevexpressGrid.ItemSearchLookUpEditSetup(gridDecarscboINCAR_NO, clsCommon.GetCarMaster("",  true), "", true, parameterDict);
 
             clsDevexpressGrid.ItemLookUpEditSetup(gridDecarcboYN, clsCommon.GetYn(null, new string[] { "삭제", "미삭제" }), "", false, false);
 
@@ -346,10 +347,11 @@ namespace HARIM_FA_DOSING
                    , a.ERR_MSG
                 FROM TMS_INPUT_PLOADM_CON a
                     INNER JOIN TMS_INPUT_PLOADD_CON b ON b.DISPATCHNO = a.DISPATCHNO
-                    INNER JOIN SAP_INPUT_SHIP_ORDERM_CON c ON c.WERKS = '{cboPlant_Code.EditValue}' AND c.VBELN = b.ORDERNO
+                    LEFT JOIN SAP_INPUT_SHIP_ORDERM_CON c ON c.WERKS = '{cboPlant_Code.EditValue}' AND c.VBELN = b.ORDERNO
                     LEFT JOIN SAP_INPUT_SHIP_ORDERD_CON D ON d.VBELN = c.VBELN AND d.POSNR = b.ORDERLINENO
                 WHERE ('{sDISPATCHNO}' IS NOT NULL AND a.DISPATCHNO = '{sDISPATCHNO}') OR
                        ('{sDISPATCHNO}' IS NULL AND a.DELIVERYDATE BETWEEN '{fromDate}' AND '{toDate}')
+                    AND a.VEHICLENO LIKE '%{txtVEHICLENO.EditValue}%'
                 ORDER BY DECODE(a.ERP_UP_YN, 'N', 1, 'M', 2, 'C', 3, 'F', 4, 'U', 5, 'D', 6, '', 7, 8)
                         , DECODE(a.TMS_UP_YN, 'N', 1, 'M', 2, 'C', 3, 'F', 4, 'U', 5, 'D', 6, '', 7, 8)
                         ASC, a.DISPATCHNO DESC
@@ -530,9 +532,10 @@ namespace HARIM_FA_DOSING
                     LEFT JOIN TMS_INPUT_PLOADM_CON c ON c.DISPATCHNO = b.DISPATCHNO
                 WHERE a.INCAR_DATE BETWEEN TO_DATE('{dtFrom.ToString("yyyy-MM-dd HH:mm:ss")}', 'YYYY-MM-DD HH24:MI:SS')
                                        AND TO_DATE('{dtTo.ToString("yyyy-MM-dd HH:mm:ss")}', 'YYYY-MM-DD HH24:MI:SS') + 1 - (1/86400)
-                  AND a.CAR_TYPE IN ('{clsCommon.GetCarInputTypeCode("제품출고")}', 
+                    AND a.CAR_TYPE IN ('{clsCommon.GetCarInputTypeCode("제품출고")}', 
                                      '{clsCommon.GetCarInputTypeCode("반품")}')
-                  AND ('{cboDelYn.EditValue}' IS NULL OR NVL(a.DEL_FLAG, 'N') = '{cboDelYn.EditValue}')
+                    --AND ('{txtVEHICLENO.EditValue}' IS NULL OR c.VEHICLENO LIKE '%{txtVEHICLENO.EditValue}%')
+                    AND ('{cboDelYn.EditValue}' IS NULL OR NVL(a.DEL_FLAG, 'N') = '{cboDelYn.EditValue}')
                 ORDER BY a.IS_NO DESC
                 ";
 
@@ -2557,60 +2560,104 @@ namespace HARIM_FA_DOSING
 
         private void viewDeCar_ShownEditor(object sender, EventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.GridView view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            //        DevExpress.XtraGrid.Views.Grid.GridView view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
 
-            if (view.FocusedColumn.FieldName == "INCAR_NO")
+            //        if (view.FocusedColumn.FieldName != "INCAR_NO")
+            //            return;
+
+            //        SearchLookUpEdit edit = view.ActiveEditor as SearchLookUpEdit;
+
+            //        if (edit == null)
+            //            return;
+
+            //        object currentValue = edit.EditValue;
+
+            //        Dictionary<string, string> parameterDict = new Dictionary<string, string>
+            //{
+            //    { "TYPE", "운송사" }
+            //};
+
+            //        clsDevexpressUtil.ItemSearchLookUpEditSetup(
+            //            edit,
+            //            clsCommon.GetCarMaster("", true),
+            //            "",
+            //            true,
+            //            parameterDict
+            //        );
+
+            //        edit.Properties.PopupFormMinSize = new Size(200, 300);
+
+            //        edit.Properties.PopupFilterMode = PopupFilterMode.Contains;
+            //        edit.Properties.TextEditStyle = TextEditStyles.Standard;
+            //        edit.Properties.ImmediatePopup = true;
+            //        edit.Properties.PopupSizeable = true;
+            //        edit.Properties.NullText = "";
+
+            //        DevExpress.XtraGrid.Views.Grid.GridView popupView = edit.Properties.View;
+
+            //        popupView.OptionsView.ColumnAutoWidth = false;
+
+            //        popupView.FocusRectStyle = DrawFocusRectStyle.RowFocus;
+            //        popupView.OptionsSelection.EnableAppearanceFocusedCell = false;
+
+            //        popupView.OptionsBehavior.AllowIncrementalSearch = true;
+
+            //        popupView.OptionsFind.AlwaysVisible = true;
+
+            //        popupView.OptionsFind.FindMode = FindMode.FindClick;
+
+            //        popupView.OptionsFind.HighlightFindResults = true;
+
+            //        popupView.OptionsFind.FindFilterColumns = "CODE;NAME;TYPE";
+
+            //        popupView.BestFitColumns();
+
+            //        if (popupView.Columns["CODE"] != null)
+            //            popupView.Columns["CODE"].Width = 120;
+
+            //        if (popupView.Columns["NAME"] != null)
+            //            popupView.Columns["NAME"].Width = 120;
+
+            //        if (popupView.Columns["TYPE"] != null)
+            //            popupView.Columns["TYPE"].Width = 120;
+
+            //        // 중요
+            //        edit.QueryPopUp -= Edit_QueryPopUp;
+            //        edit.QueryPopUp += Edit_QueryPopUp;
+
+            //        edit.EditValue = currentValue;
+        }
+
+        private void Edit_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            SearchLookUpEdit edit = sender as SearchLookUpEdit;
+
+            if (edit == null)
+                return;
+
+            DevExpress.XtraGrid.Views.Grid.GridView popupView = edit.Properties.View;
+
+            popupView.ClearColumnsFilter();
+
+            popupView.ActiveFilterString = "";
+
+            popupView.ApplyFindFilter("");
+
+            popupView.FindFilterText = "";
+
+            popupView.FocusedRowHandle = 0;
+        }
+
+        private void txtVEHICLENO_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                SearchLookUpEdit edit = view.ActiveEditor as SearchLookUpEdit;
-
-                if (edit == null)
-                    return;
-
-                object currentValue = edit.EditValue;
-
-                Dictionary<string, string> parameterDict = new Dictionary<string, string>
-    {
-        { "TYPE", "운송사" }
-    };
-
-                clsDevexpressUtil.ItemSearchLookUpEditSetup(
-                    edit,
-                    clsCommon.GetCarMaster("", true),
-                    "",
-                    true,
-                    parameterDict
-                );
-
-                edit.EditValue = currentValue;
-
-                edit.Properties.PopupFormMinSize = new Size(200, 300);
-
-                edit.Properties.PopupFilterMode = PopupFilterMode.Contains;
-                edit.Properties.TextEditStyle = TextEditStyles.Standard;
-
-                DevExpress.XtraGrid.Views.Grid.GridView popupView = edit.Properties.View;
-
-                popupView.OptionsFind.AlwaysVisible = true;
-                popupView.OptionsFind.FindMode = FindMode.Always;
-                popupView.OptionsFind.HighlightFindResults = true;
-
-                popupView.OptionsFind.FindFilterColumns = "CODE;NAME;운송사";
-
-                popupView.OptionsView.ColumnAutoWidth = false;
-
-                popupView.BestFitColumns();
-
-                popupView.Columns["CODE"].Width = 120;
-                popupView.Columns["NAME"].Width = 120;
-
-                popupView.FocusRectStyle = DrawFocusRectStyle.RowFocus;
-                popupView.OptionsSelection.EnableAppearanceFocusedCell = false;
-
-                this.BeginInvoke(new Action(() =>
-                {
-                    edit.ShowPopup();
-                    popupView.Focus();
-                }));
+                if (tabPage.SelectedTabPageIndex == 0)
+                    XList_Search();
+                else if (tabPage.SelectedTabPageIndex == 1)
+                    XMain_Search();
+                else
+                    XDeCar_Search();
             }
         }
     }

@@ -2896,16 +2896,26 @@ namespace Core.Class
         {
             string sCheck = string.Empty;
 
+            gridView.CloseEditor();
+            gridView.UpdateCurrentRow();
+
             foreach (DataColumn col in dr.Table.Columns)
             {
                 string columnName = col.ColumnName;
 
                 if (sValid.Contains(columnName))
                 {
-                    if (dr[columnName].ToString().Trim().IsNullEmpty())
+                    object value = dr[columnName];
+
+                    if (value == DBNull.Value ||
+                        string.IsNullOrWhiteSpace(Convert.ToString(value)))
                     {
                         sCheck = columnName;
-                        ShowMessageBox.XtraShowWarning($"{gridView.Columns.ColumnByFieldName(columnName)} 항목은 필수 입력 항목 입니다.");
+
+                        string caption = gridView.Columns.ColumnByFieldName(columnName)?.Caption ?? columnName;
+
+                        ShowMessageBox.XtraShowWarning($"{caption} 항목은 필수 입력 항목 입니다.");
+
                         break;
                     }
                 }

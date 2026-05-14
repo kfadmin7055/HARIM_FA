@@ -3357,6 +3357,7 @@
             this.txtVEHICLENO.Size = new System.Drawing.Size(70, 24);
             this.txtVEHICLENO.StyleController = this.layoutControl;
             this.txtVEHICLENO.TabIndex = 25;
+            this.txtVEHICLENO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVEHICLENO_KeyDown);
             // 
             // btn_search
             // 

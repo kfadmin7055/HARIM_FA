@@ -224,8 +224,6 @@ namespace HARIM_FA_DOSING
 
                 //gridView_work.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
 
-                vWorkStart = false;
-
                 //// 플랜트
                 clsDevexpressUtil.ItemLookUpEditSetup(cboPlant_Code, clsCommon.GetPlant(), "", true, 0, false);
                 cboPlant_Code.EditValue = vPlant_Code;
@@ -624,8 +622,7 @@ namespace HARIM_FA_DOSING
 
             try
             {
-                if (new string[] { "PJ01", "PJ02", "PJ04", "PJ05" }.Contains(clsCommon.PlantCode))
-                    vWorkStart = false;
+                vWorkStart = false;
 
                 NewRow();
             }
@@ -1149,8 +1146,6 @@ namespace HARIM_FA_DOSING
         {
             try
             {
-                vWorkStart = false;
-
                 clsDevexpressGrid.GridEndEdit(gridView_work);
 
                 DataTable DT = (DataTable)gridControl_work.DataSource;
@@ -1505,6 +1500,31 @@ namespace HARIM_FA_DOSING
                 XMain_Search();
 
                 bTransFlag = false;
+
+                SQL = $@"
+                SELECT PLANT_CODE
+                    , PROCESS_KEY
+                    , L_CODE
+                    , WORKDATE
+                    , NUM
+                    , RESOURCE_NO
+                    , NOTE
+                FROM WORK_ORDER
+                WHERE PLANT_CODE = '{vPlant_Code}'
+                    AND PROCESS_KEY = '{vProcess_Code}'
+                    AND L_CODE = '{vLine_Code}'
+                    AND C_CONDITION = '{clsCommon.PcStatus.InProgress}'
+                    AND NVL(DEL_FLAG, 'N') != 'Y'
+                    AND WORKDATE = '{string.Format("{0:yyyyMMdd}", dateEdit_workDate.EditValue)}'
+                ORDER BY NUM
+                ";
+
+                DataSet ds = Dbconn.conn.ExecutDataset(SQL);
+
+                if (Dbconn.conn.getRowCnt(ds) > 0)
+                {
+                    vWorkStart = true;
+                }
             }
             catch (Exception ex)
             {
@@ -2788,7 +2808,7 @@ namespace HARIM_FA_DOSING
                         ShowMessageBox.XtraShowError("펠렛 작업지시 입력을 실패했습니다", "경고");
                     }
 
-                        SQL = $@"
+                    SQL = $@"
                     /* TB01 : PELLET_REPORT_ADD */
                     INSERT INTO PELLET_REPORT_ADD (
                             L_CODE            /* 07 */
@@ -4254,7 +4274,7 @@ namespace HARIM_FA_DOSING
             int[] tmpDatas = new int[20];
             string vBatchNum = string.Empty;
             string vResourceName = string.Empty;
-            
+
             try
             {
                 DataSet ds = null;
@@ -4287,8 +4307,6 @@ namespace HARIM_FA_DOSING
 
                 if (tmpDatas[0] != 1)
                 {
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "작업가능여부 진입");
-
                     clsCommon.GetPLCAddress(vPlant_Code
                                             , vProcess_Code
                                             , vLine_Code
@@ -4305,8 +4323,6 @@ namespace HARIM_FA_DOSING
                     sWorkDate = tmpDatas[0].ToString().PadLeft(4, '0') + tmpDatas[1].ToString().PadLeft(4, '0');
 
                     sNum = tmpDatas[2].ToString();
-
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "작업지시번호 가져오기");
 
                     clsCommon.GetPLCAddress(vPlant_Code
                                             , vProcess_Code
@@ -4334,8 +4350,6 @@ namespace HARIM_FA_DOSING
 
                     vBatchNum = tmpDatas[0].ToString();
 
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "배치 번호 가져오기");
-
                     SQL = $@"
                     SELECT WO.PROCESS_KEY, WO.RESOURCE_NO, P.DESCRIPTION
                     FROM WORK_ORDER WO
@@ -4355,13 +4369,6 @@ namespace HARIM_FA_DOSING
                         }
                     }
 
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "제품명 가져오기");
-
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"{sWorkDate}");
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"{sNum}");
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"{vBatchNum}");
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"{vResourceName}");
-
                     txtEdt_runWorkNum.Text = sWorkDate;
                     txtEdt_runNum.Text = sNum;
                     txtEdt_runWorkBatch.Text = vBatchNum;
@@ -4375,18 +4382,13 @@ namespace HARIM_FA_DOSING
                     txtEdt_runWorkProduct.Text = string.Empty;
                 }
 
-                clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"연단{cboOperWorkMode.SelectedIndex}");
-
                 //작업지시 연동모드일 경우 다음 작업지시 시작
                 if (cboOperWorkMode.EditValue?.ToString() == "연동")
                 {
-
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", $"연동시작");
                     string SQL = $@"
                     SELECT PLANT_CODE
                        , PROCESS_KEY
                        , L_CODE
-
                        , WORKDATE
                        , NUM
                        , RESOURCE_NO
@@ -4402,8 +4404,6 @@ namespace HARIM_FA_DOSING
                     ";
 
                     ds = Dbconn.conn.ExecutDataset(SQL);
-
-                    clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "진행중인 작업 확인");
 
                     if (Dbconn.conn.getRowCnt(ds) == 0)
                     {
@@ -4426,8 +4426,6 @@ namespace HARIM_FA_DOSING
 
                         using (DataSet NextWorkDs = Dbconn.conn.ExecutDataset(SQL))
                         {
-                            clsLog.logSave(this, "work_watch_timer_Tick(object sender, EventArgs e)", "계획인 작업 확인");
-
                             if (Dbconn.conn.getRowCnt(NextWorkDs) > 0)
                             {
                                 sPlantCode = Dbconn.conn.getData(NextWorkDs, "PLANT_CODE", 0);

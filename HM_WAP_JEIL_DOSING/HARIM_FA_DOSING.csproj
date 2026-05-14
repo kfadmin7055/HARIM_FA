@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
-    <ApplicationRevision>431</ApplicationRevision>
+    <ApplicationRevision>438</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -422,6 +422,12 @@
     </Compile>
     <Compile Include="Form\3.생산계획관리\m_BagStock.Designer.cs">
       <DependentUpon>m_BagStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BulkStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4.생산실적관리\frm_BulkStock.Designer.cs">
+      <DependentUpon>frm_BulkStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\4.생산실적관리\frm_ProductInventoryLedger.cs">
       <SubType>Form</SubType>
@@ -1128,6 +1134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3.생산계획관리\m_BagStock.resx">
       <DependentUpon>m_BagStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4.생산실적관리\frm_BulkStock.resx">
+      <DependentUpon>frm_BulkStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\4.생산실적관리\frm_ProductInventoryLedger.resx">
       <DependentUpon>frm_ProductInventoryLedger.cs</DependentUpon>

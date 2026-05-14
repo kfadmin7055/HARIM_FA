@@ -190,6 +190,7 @@
             this.work_watch_timer = new System.Windows.Forms.Timer(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
+            this.accordionControlElement4_BulkStock = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl_top)).BeginInit();
             this.panelControl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo.Properties)).BeginInit();
@@ -1133,6 +1134,7 @@
             this.accordionControlElement_menu4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement4_ProductInventoryLedger,
             this.accordionControlElement4_Stock_Info,
+            this.accordionControlElement4_BulkStock,
             this.accordionControlElement4_IngredUseResult,
             this.accordionControlElement4_ProdocutUseResult,
             this.accordionControlElement4_PackUseResult,
@@ -2032,6 +2034,15 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.Text = "Custom 3";
             // 
+            // accordionControlElement4_BulkStock
+            // 
+            this.accordionControlElement4_BulkStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4_BulkStock.ImageOptions.Image")));
+            this.accordionControlElement4_BulkStock.Name = "accordionControlElement4_BulkStock";
+            this.accordionControlElement4_BulkStock.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4_BulkStock.Tag = "frm_BulkStock";
+            this.accordionControlElement4_BulkStock.Text = "벌크 재고 관리";
+            this.accordionControlElement4_BulkStock.Click += new System.EventHandler(this.menuClick);
+            // 
             // MAIN
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Control;
@@ -2246,5 +2257,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5_frm_Silo_Down;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2_PackMaterialList;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4_Stock_Info;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4_BulkStock;
     }
 }
